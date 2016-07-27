@@ -1,22 +1,14 @@
-Role Name
+New Relic Servers package installer
 =========
 
-A brief description of the role goes here.
+[![Build Status](https://travis-ci.org/primozcigler/ansible-newrelic-servers.svg?branch=master)](https://travis-ci.org/primozcigler/ansible-newrelic-servers)
 
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Role for installing and running Ubuntu or Debian New Relic Servers package. More info in [official docs](https://docs.newrelic.com/docs/servers/new-relic-servers-linux/getting-started/new-relic-servers-linux#installation).
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+The only variable that should be set prior running this role is the `newrelic_license_key`. It is 40 chars long key you get in your New Relic account settings. I recommend saving it in [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html).
 
 Example Playbook
 ----------------
@@ -25,14 +17,14 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: primozcigler.newrelic-servers, newrelic_license_key: 42 }
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Full stack developer, currently at [ProteusThemes](https://www.proteusthemes.com/).
